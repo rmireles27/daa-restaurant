@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Reservation } from '../_models/reservation.model';
 
 @Component({
   selector: 'app-reservation-list',
@@ -6,17 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./reservation-list.component.css']
 })
 export class ReservationListComponent {
-  reservations= [
-    { name: 'Roberto Mireles', email: "roberto@gmail.com", phone: '112223334444', people: 1, reservationDate: '2023.04.30T06:00:00.000Z', reservationSchedule: 7},
-    { name: 'Roberto Mireles', email: "roberto@gmail.com", phone: '112223334444', people: 1, reservationDate: '2023.04.30T06:00:00.000Z', reservationSchedule: 7},
-    { name: 'Roberto Mireles', email: "roberto@gmail.com", phone: '112223334444', people: 1, reservationDate: '2023.04.30T06:00:00.000Z', reservationSchedule: 7},
-    { name: 'Roberto Mireles', email: "roberto@gmail.com", phone: '112223334444', people: 1, reservationDate: '2023.04.30T06:00:00.000Z', reservationSchedule: 7},
-    { name: 'Roberto Mireles', email: "roberto@gmail.com", phone: '112223334444', people: 1, reservationDate: '2023.04.30T06:00:00.000Z', reservationSchedule: 7},
-    { name: 'Roberto Mireles', email: "roberto@gmail.com", phone: '112223334444', people: 1, reservationDate: '2023.04.30T06:00:00.000Z', reservationSchedule: 7},
-    { name: 'Roberto Mireles', email: "roberto@gmail.com", phone: '112223334444', people: 1, reservationDate: '2023.04.30T06:00:00.000Z', reservationSchedule: 7},
-    { name: 'Roberto Mireles', email: "roberto@gmail.com", phone: '112223334444', people: 1, reservationDate: '2023.04.30T06:00:00.000Z', reservationSchedule: 7},
-    { name: 'Roberto Mireles', email: "roberto@gmail.com", phone: '112223334444', people: 1, reservationDate: '2023.04.30T06:00:00.000Z', reservationSchedule: 7},
-    { name: 'Roberto Mireles', email: "roberto@gmail.com", phone: '112223334444', people: 1, reservationDate: '2023.04.30T06:00:00.000Z', reservationSchedule: 7},
+  reservations: Reservation[] = [
+    { name: 'Roberto Mireles', email: "roberto@gmail.com", phone: '112223334444', people: 1, reservationDate: new Date('2023.04.30T06:00:00.000Z'), reservationSchedule: 7},
+    { name: 'Roberto Mireles', email: "roberto@gmail.com", phone: '112223334444', people: 1, reservationDate: new Date('2023.04.30T06:00:00.000Z'), reservationSchedule: 7},
+    { name: 'Roberto Mireles', email: "roberto@gmail.com", phone: '112223334444', people: 1, reservationDate: new Date('2023.04.30T06:00:00.000Z'), reservationSchedule: 7},
+    { name: 'Roberto Mireles', email: "roberto@gmail.com", phone: '112223334444', people: 1, reservationDate: new Date('2023.04.30T06:00:00.000Z'), reservationSchedule: 7},
+    { name: 'Roberto Mireles', email: "roberto@gmail.com", phone: '112223334444', people: 1, reservationDate: new Date('2023.04.30T06:00:00.000Z'), reservationSchedule: 7},
+    { name: 'Roberto Mireles', email: "roberto@gmail.com", phone: '112223334444', people: 1, reservationDate: new Date('2023.04.30T06:00:00.000Z'), reservationSchedule: 7},
+    { name: 'Roberto Mireles', email: "roberto@gmail.com", phone: '112223334444', people: 1, reservationDate: new Date('2023.04.30T06:00:00.000Z'), reservationSchedule: 7},
+    { name: 'Roberto Mireles', email: "roberto@gmail.com", phone: '112223334444', people: 1, reservationDate: new Date('2023.04.30T06:00:00.000Z'), reservationSchedule: 7},
+    { name: 'Roberto Mireles', email: "roberto@gmail.com", phone: '112223334444', people: 1, reservationDate: new Date('2023.04.30T06:00:00.000Z'), reservationSchedule: 7},
+    { name: 'Roberto Mireles', email: "roberto@gmail.com", phone: '112223334444', people: 1, reservationDate: new Date('2023.04.30T06:00:00.000Z'), reservationSchedule: 7},
   ];
 
   displayedColumns: string[] = [

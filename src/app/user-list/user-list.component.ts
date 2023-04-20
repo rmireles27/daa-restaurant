@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { User } from '../_models/user.models';
 
 @Component({
   selector: 'app-user-list',
@@ -6,21 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent {
-  users= [
-    { username: 'roberto.mireles'},
-    { username: 'roberto.mireles'},
-    { username: 'roberto.mireles'},
-    { username: 'roberto.mireles'},
-    { username: 'roberto.mireles'},
-    { username: 'roberto.mireles'},
-    { username: 'roberto.mireles'},
-    { username: 'roberto.mireles'},
-    { username: 'roberto.mireles'},
-    { username: 'roberto.mireles'},
+  users: User[] = [
+    { username: 'roberto.mireles', name: 'Roberto Mireles'},
+    { username: 'roberto.mireles', name: 'Roberto Mireles'},
   ];
 
   displayedColumns: string[] = [
     'username',
+    'name',
     'actions',
   ];
 

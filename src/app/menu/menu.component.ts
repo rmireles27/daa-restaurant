@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Menu } from '../_models/menu.model';
 
 @Component({
   selector: 'app-menu',
@@ -6,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent {
-  menuList = [
+  menuList: Menu[] = [
     {
       title: 'Rigatoni ala carbonara',
       image: '../../assets/menu/rigatoni-ala-carbonara.jpg',
