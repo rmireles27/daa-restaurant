@@ -21,6 +21,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { LoginComponent } from './login/login.component';
 import { ReservationListComponent } from './reservation-list/reservation-list.component';
 import {MatTableModule} from '@angular/material/table';
+import { UserListComponent } from './user-list/user-list.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {MatTableModule} from '@angular/material/table';
     MenuComponent,
     ReservationComponent,
     LoginComponent,
-    ReservationListComponent
+    ReservationListComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,
