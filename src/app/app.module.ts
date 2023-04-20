@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import {MatButtonModule} from '@angular/material/button';
 import { MenuComponent } from './menu/menu.component';
 import { ReservationComponent } from './reservation/reservation.component';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ReservationComponent } from './reservation/reservation.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
