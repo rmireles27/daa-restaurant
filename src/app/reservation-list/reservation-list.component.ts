@@ -25,6 +25,14 @@ export class ReservationListComponent {
     'people',
     'name',
     'email',
-    'phone'
+    'phone',
+    'actions',
   ];
+
+  editButtonClicked() {
+    alert('Boton de edicion activado.')
+  }
+  deleteButtonClicked() {
+    alert('Boton de borrar activado.')
+  }
 }
