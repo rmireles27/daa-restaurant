@@ -19,6 +19,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { LoginComponent } from './login/login.component';
+import { ReservationListComponent } from './reservation-list/reservation-list.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { LoginComponent } from './login/login.component';
     HomeComponent,
     MenuComponent,
     ReservationComponent,
-    LoginComponent
+    LoginComponent,
+    ReservationListComponent
   ],
   imports: [
     BrowserModule,
