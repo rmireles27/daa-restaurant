@@ -9,12 +9,18 @@
             <mat-form-field class="full-width">
                 <mat-label>Nombre</mat-label>
                 <input matInput type="text" placeholder="Escribe tu nombre" formControlName="name">
+                <mat-hint>10 a 30 caracteres</mat-hint>
+                <mat-error *ngIf="form.controls['name'].errors?.['required']">Este campo es requerido</mat-error>
+                <mat-error *ngIf="form.controls['name'].errors?.['minlenght']">Ingrese mas de 10 caracteres</mat-error>
+                <mat-error *ngIf="form.controls['name'].errors?.['maxlenght']">Ingrese menos de 100 caracteres</mat-error>
             </mat-form-field>
-            
+
             <!-- Email -->
             <mat-form-field class="full-width">
                 <mat-label>Email</mat-label>
                 <input matInput type="email" placeholder="Escribe tu email" formControlName="email">
+                <mat-hint>Ej: usuario@dominio.com</mat-hint>
+                <mat-error *ngIf="form.controls['email'].errors?.['required']">Este campo es requerido</mat-error>
             </mat-form-field>
 
             <!-- Phone -->
@@ -25,8 +31,9 @@
 
             <!-- People -->
             <mat-form-field class="full-width">
-                <mat-label>Nombre</mat-label>
+                <mat-label>Numero de personas</mat-label>
                 <input matInput type="number" placeholder="Numero de personas" formControlName="people">
+                <mat-hint>1 a 9 personas</mat-hint>
             </mat-form-field>
 
             <!-- Date -->
@@ -40,18 +47,19 @@
             <!-- Schedule -->
             <mat-form-field>
                 <mat-label>Horario</mat-label>
-                <mat-select formControlName="reservationSchefule">
+                <mat-select formControlName="reservationSchedule">
                     <mat-option value="6">6:00 pm</mat-option>
                     <mat-option value="7">7:00 pm</mat-option>
                     <mat-option value="8">8:00 pm</mat-option>
                     <mat-option value="9">9:00 pm</mat-option>
                 </mat-select>
+
             </mat-form-field>
 
         </mat-card-content>
         <mat-card-actions align="end">
             <button mat-button type="reset" (click)="formCancel()">Cancelar</button>
-            <button mat-raised-button color="primary" type="submit">Reservar</button>
+            <!--<button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Reservar</button>-->
         </mat-card-actions>
     </mat-card>
 </form>

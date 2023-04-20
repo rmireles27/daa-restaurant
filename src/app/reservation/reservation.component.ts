@@ -15,7 +15,7 @@ export class ReservationComponent implements OnInit {
       this.form = this.fb.group({
         name: [null, [Validators.required, Validators.minLength(10), Validators.maxLength(100)]],
         email: [null, [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
-        phone: [null, [Validators.required]],
+        phone: [null],
         people: [null, [Validators.required, Validators.pattern('^[0-9]*$')]],
         reservationDate: [null, [Validators.required]],
         ReservationSchedule: [null, [Validators.required]]
