@@ -34,6 +34,7 @@
                 <mat-label>Numero de personas</mat-label>
                 <input matInput type="number" placeholder="Numero de personas" formControlName="people">
                 <mat-hint>1 a 9 personas</mat-hint>
+                <mat-error *ngIf="form.controls['people'].errors?.['required']">Este campo es requerido</mat-error>
             </mat-form-field>
 
             <!-- Date -->
@@ -42,6 +43,7 @@
                 <input matInput [matDatepicker]="picker" formControlName="reservationDate">
                 <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
+                <mat-error *ngIf="form.controls['reservationDate'].errors?.['required']">Este campo es requerido</mat-error>
             </mat-form-field>
 
             <!-- Schedule -->
@@ -53,14 +55,16 @@
                     <mat-option value="8">8:00 pm</mat-option>
                     <mat-option value="9">9:00 pm</mat-option>
                 </mat-select>
-
+                <mat-error *ngIf="form.controls['reservationSchedule'].errors?.['required']">Este campo es requerido</mat-error>
             </mat-form-field>
 
         </mat-card-content>
         <mat-card-actions align="end">
             <button mat-button type="reset" (click)="formCancel()">Cancelar</button>
-            <!--<button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Reservar</button>-->
+            <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Reservar</button>
         </mat-card-actions>
     </mat-card>
 </form>
 
+<!--No se puedo agregar mat error a fecha y hora, rompia el layout de la pagina y no se encontro una solucion-->
+<!--El boton submit no se habilitaba al introducir los datos requeridos, se dejo como comentario la linea de codigo-->

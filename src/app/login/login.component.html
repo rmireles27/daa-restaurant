@@ -1,1 +1,35 @@
-<p>login works!</p>
+<form [formGroup]="form" (ngSubmit)="formSubmit(form)">
+    <mat-card class="login-card">
+        <mat-card-header>
+          <mat-card-title>Login</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          
+            <!-- Username -->
+            <mat-form-field class="full-width">
+                <mat-label>Nombre de usuario</mat-label>
+                <input matInput type="text" placeholder="Escribe tu nombre de usuario" formControlName="username">
+                <mat-hint>8 a 20 caracteres</mat-hint>
+                <mat-error *ngIf="form.controls['username'].errors?.['minlenght']">Ingrese mas de 8 caracteres</mat-error>
+                <mat-error *ngIf="form.controls['username'].errors?.['maxlenght']">Ingrese menos de 20 caracteres</mat-error>
+                <mat-error *ngIf="form.controls['username'].errors?.['required']">Este campo es requerido</mat-error>
+            </mat-form-field>
+
+            <!-- Passowrd -->
+            <mat-form-field class="full-width">
+                <mat-label>Constraseña</mat-label>
+                <input matInput type="passowrd" placeholder="Escribe tu Constraseña" formControlName="password">
+                <mat-hint>8 a 32 caracteres, un numero, una minuscula, una mayuscula y un caracter especial</mat-hint>
+                <mat-error *ngIf="form.controls['password'].errors?.['required']">Este campo es requerido</mat-error>
+                <mat-error *ngIf="form.controls['password'].errors?.['minlenght']">Ingrese mas de 8 caracteres</mat-error>
+                <mat-error *ngIf="form.controls['password'].errors?.['maxlenght']">Ingrese menos de 32 caracteres</mat-error>
+                <mat-error *ngIf="form.controls['password'].errors?.['pattern']">Tu constraseña no cuple con los requerimientos minimos</mat-error>
+            </mat-form-field>
+
+        </mat-card-content>
+        <mat-card-actions align="end">
+            <button mat-button type="reset" (click)="formCancel()">Cancelar</button>
+            <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Reservar</button>
+        </mat-card-actions>
+    </mat-card>
+</form>

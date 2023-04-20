@@ -18,7 +18,7 @@ export class ReservationComponent implements OnInit {
         phone: [null],
         people: [null, [Validators.required, Validators.pattern('^[0-9]*$')]],
         reservationDate: [null, [Validators.required]],
-        ReservationSchedule: [null, [Validators.required]]
+        reservationSchedule: [null, [Validators.required]],
       })
   }
   formSubmit(form:any) {
