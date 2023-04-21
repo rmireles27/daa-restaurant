@@ -1,24 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Reservation } from '../_models/reservation.model';
+import { ReservationService} from '../_services/reservation/reservation.service'
 
 @Component({
   selector: 'app-reservation-list',
   templateUrl: './reservation-list.component.html',
   styleUrls: ['./reservation-list.component.css']
 })
-export class ReservationListComponent {
-  reservations: Reservation[] = [
-    { name: 'Roberto Mireles', email: "roberto@gmail.com", phone: '112223334444', people: 1, reservationDate: new Date('2023.04.30T06:00:00.000Z'), reservationSchedule: 7},
-    { name: 'Roberto Mireles', email: "roberto@gmail.com", phone: '112223334444', people: 1, reservationDate: new Date('2023.04.30T06:00:00.000Z'), reservationSchedule: 7},
-    { name: 'Roberto Mireles', email: "roberto@gmail.com", phone: '112223334444', people: 1, reservationDate: new Date('2023.04.30T06:00:00.000Z'), reservationSchedule: 7},
-    { name: 'Roberto Mireles', email: "roberto@gmail.com", phone: '112223334444', people: 1, reservationDate: new Date('2023.04.30T06:00:00.000Z'), reservationSchedule: 7},
-    { name: 'Roberto Mireles', email: "roberto@gmail.com", phone: '112223334444', people: 1, reservationDate: new Date('2023.04.30T06:00:00.000Z'), reservationSchedule: 7},
-    { name: 'Roberto Mireles', email: "roberto@gmail.com", phone: '112223334444', people: 1, reservationDate: new Date('2023.04.30T06:00:00.000Z'), reservationSchedule: 7},
-    { name: 'Roberto Mireles', email: "roberto@gmail.com", phone: '112223334444', people: 1, reservationDate: new Date('2023.04.30T06:00:00.000Z'), reservationSchedule: 7},
-    { name: 'Roberto Mireles', email: "roberto@gmail.com", phone: '112223334444', people: 1, reservationDate: new Date('2023.04.30T06:00:00.000Z'), reservationSchedule: 7},
-    { name: 'Roberto Mireles', email: "roberto@gmail.com", phone: '112223334444', people: 1, reservationDate: new Date('2023.04.30T06:00:00.000Z'), reservationSchedule: 7},
-    { name: 'Roberto Mireles', email: "roberto@gmail.com", phone: '112223334444', people: 1, reservationDate: new Date('2023.04.30T06:00:00.000Z'), reservationSchedule: 7},
-  ];
+export class ReservationListComponent implements OnInit{
+  reservations: Reservation[] = [];
 
   displayedColumns: string[] = [
     'reservationDate',
@@ -30,10 +20,16 @@ export class ReservationListComponent {
     'actions',
   ];
 
+  constructor(private reservationService: ReservationService) {}
+
+  ngOnInit(): void {
+      this.reservations = this.reservationService.getReservations();
+  }
+
   editButtonClicked() {
     alert('Boton de edicion activado.')
   }
   deleteButtonClicked() {
-    alert('Boton de borrar activado.')
+    this.reservationService.deleteRservation();
   }
 }
